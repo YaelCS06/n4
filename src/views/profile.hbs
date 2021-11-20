@@ -1,55 +1,37 @@
 <section>
-    <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div id="form" class="form">
-         <div>
-           
-                    <div class="container p-4">
-                        <div class="row">
-                            <div class="col-md-4 mx-auto">
-                                <div class="card-body">
-                                    <h1>Bienvenido {{user.username}}</h1>
-
+            <img class="user" title="Usuario" src="/images/unDraw/male.svg" alt="">
+            <img class="user2" title="Usuario"  src="/images/unDraw/female.svg" alt="">
+            <div class="datos_perfil">
+                <div id="form" class="form">
+                    <div>
+                        <div class="container p-4">
+                            <div class="row">
+                                <div class="col-md-4 mx-auto">
+                                    <div class="card-body">
+                                        <p class="title2">Bienvenido</p>
+                                            <br>
+                                            <b>{{user.username}}</b>
+                                    </div>
                                 </div>
-
                             </div>
-
-                        </div>
-
-                    </div>
-               
-            </div>
-        </div>
-
-
-    <div class="container p-4">
-        <div class="row">
-            {{#each resultados}}
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <div class="card-body">
-                          <h2 class="card-title text-upprecase">
-                              Resultado Examen
-                          </h2>  
-                          <p class="m-1">{{resultado}}</p>
-
                         </div>
                     </div>
                 </div>
-            {{/each}}
-
-        </div>
-    </div>
-
-     
-</section>
+                <div class="container p-4">
+                    <div class="row">
+                        {{#each resultados}}
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                    <h2 class="card-title text-upprecase title2">
+                                        Resultado Examen
+                                    </h2>  
+                                    <b class="m-1">{{resultado}}</b>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
