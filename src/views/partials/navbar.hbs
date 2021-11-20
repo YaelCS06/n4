@@ -1,0 +1,32 @@
+
+ {{#if user}}
+        <header>
+        <img class= "logo animate__animated animate__rotateInDownLeft animate__slower" src="../images/NoNeim.png" alt="Error al cargar (Logo de NoNeim)" title="Logo NoNeim">
+        <div class="margin__title">
+            <p title="NoNeim" class= "fuente__title animate__animated animate__bounceInUp animate__slower">NoNeim</p>
+        </div>
+        <nav>
+            <a href="/profile"><i class="fas fa-running"></i> Perfil </a>
+            <a href="#"><i class="fas fa-list-alt"></i> Comipems </a>
+            <a href="#"><i class="fas fa-list-alt"></i> Escuelas </a>
+            <a href="/usuario/chat"><i class="fas fa-list-alt"></i> Chat </a>
+            <a href="/usuario/examen"><i class="fas fa-list-alt"></i> Examen </a>
+            <a href=""><i class="fas fa-list-alt"></i> Cuestionarios </a>
+            <a href="#"><i class="fas fa-user-tie"></i> Test Vocacional </a>
+            <a href="/logout"><i class="fas fa-user-tie"></i> Cerrar sesion </a>
+        </nav>
+        </header>
+        {{else}}
+        <header>
+        <img class= "logo animate__animated animate__rotateInDownLeft animate__slower" src="images/NoNeim.png" alt="Error al cargar (Logo de NoNeim)" title="Logo NoNeim">
+        <div class="margin__title">
+            <p title="NoNeim" class= "fuente__title animate__animated animate__bounceInUp animate__slower">NoNeim</p>
+        </div>
+        <nav>
+            <a href="/"><i class="fas fa-home"></i> Inicio</a>
+            <a href="signup"><i class="fas fa-user-edit"></i> Registrarse</a>
+            <a href="signin"><i class="fas fa-user-edit"></i> Iniciar Sesion</a>
+        </nav>
+    </header>
+        {{/if}}
+
