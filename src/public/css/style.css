@@ -531,84 +531,6 @@ ul.slider li:target{
     width: 40%;
     display: inline-block;
 }
-#cecyt_1{
-    width: 100%;
-}
-#cecyt_2{
-    width: 50%;
-    margin-left: 50px;
-}
-#cecyt_3{
-    width: 120%;
-    margin-left: 100px;
-}
-#cecyt_4{
-    width: 130%;
-    margin-left: 50px;
-}
-#cecyt_5{
-    width: 80%;
-}
-#cecyt_6{
-    width: 48%;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-#cecyt_7{
-    width: 44%;
-}
-#cecyt_8{
-    width: 40%;
-}
-#cecyt_9{
-    width: 55%;
-}
-#cecyt_10{
-    width: 90%;
-    margin-left: 120px;
-}
-#cecyt_11{
-    width: 90%;
-}
-#cecyt_12{
-    width: 120%;
-    margin-left: 70px;
-}
-#cecyt_13{
-    width: 90%;
-    margin-left: 80px;
-}
-#cecyt_14{
-    width: 40%;
-}
-#cecyt_15{
-    width: 100%;
-    margin-left: 90px;
-}
-#cet_1{
-    width: 130%;
-    margin-left: 50px;
-}
-.user{
-    border-radius: 50%;
-    background: #1b3b91;
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    margin-left: 96%;
-    margin-top: 37%;
-    transition: all 0.3s ease-out;
-}
-.user a{
-    margin-left: 11px;
-    font-size: 2em;
-    text-decoration: none;
-    color:white;
-    text-align: center;
-}
-.user:hover, .user a:hover{
-    box-shadow: rgba(0, 0, 0, 0.3);
-}
 /*______________________________________________________________________________*/
 .form-group{
     width: 100%;
@@ -658,4 +580,73 @@ ul.slider li:target{
 .justificado_pregunta{
     text-align: justify;
     margin-bottom: 10px;
+}
+.b{
+    font-weight: bold;
+    color: #1b3b91;
+    border-bottom: #e6e6e6;
+}
+.input_margen{
+    margin-bottom: 10px;
+}
+.izquierda_chat{
+    display: inline-block;
+    width: 90%;
+}
+.derecha_chat{
+    display: inline-block;
+    position: absolute;
+}
+.derecha_chat_img{
+    position: fixed;
+    width: 80%;
+    margin-left: 10%;
+}
+.margenes_perfil{
+    margin-top: -38px;
+}
+/*__________________________________________________________________*/
+
+.article{
+    display: inline-block;
+    margin-top: 70px;
+    width: 25.1%;
+    padding: 5px;
+    margin-right: 3.5%;
+    margin-left: 3.5%;
+    height: 350px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+.article:hover{
+    box-shadow: rgba(27,59,145,0.3) 5px 5px 5px 5px;
+}
+#article_izq{
+    margin-left: 20%;
+}
+.article_img{
+    width: 90%;
+}
+/*__________________________________________________________________*/
+.user{
+    position: absolute;
+    margin-top: 20%;
+    width: 25%;
+}
+.datos_perfil{
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 40%;
+}
+.user2{
+    position: absolute;
+    margin-top: 20%;
+    width: 25%;
+    display: none;
+    transition: all ease-in-out 0.5s;
+}
+.user:hover + .user2{
+    display: block;
 }
