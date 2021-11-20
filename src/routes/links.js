@@ -73,7 +73,9 @@ router.get('/chat', (req, res) =>{
     res.render('links/chat')
 });
 
-
+router.get('/aula', (req, res) =>{
+    res.render('links/aula')
+});
 
 
 
