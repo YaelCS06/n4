@@ -4,14 +4,70 @@ const router = express.Router();
 
 const pool = require('../database');
 
-router.get('/add', (req, res) =>{
-    res.render('links/add')
-});
-router.get('/examen', (req, res) =>{
-    res.render('links/examen')
-});
+//Examen
+    router.get('/examen', (req, res) =>{
+        res.render('links/examen')
+    });
 
+//Comipems
+    router.get('/comipems', (req, res) =>{
+        res.render('links/comipems')
+    });
 
+//Escuelas
+
+    router.get('/escuelas', (req, res) =>{
+        res.render('links/escuelaspag')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt1')
+    });
+    router.get('/cecyt2', (req, res) =>{
+        res.render('escuelas/cecyt2')
+    });
+    router.get('/cecyt3', (req, res) =>{
+        res.render('escuelas/cecyt3')
+    });
+    router.get('/cecyt4', (req, res) =>{
+        res.render('escuelas/cecyt4')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt5')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt6')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt7')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt8')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt9')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt10')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt11')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt12')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt13')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt14')
+    });
+    router.get('/cecyt1', (req, res) =>{
+        res.render('escuelas/cecyt15')
+    });
+    router.get('/cet1', (req, res) =>{
+        res.render('escuelas/cet1')
+    });
+//Chat
 
 router.get('/chat', (req, res) =>{
     res.render('links/chat')
@@ -36,6 +92,9 @@ router.get('/chat', (req, res) =>{
 
 
 
+router.get('/add', (req, res) =>{
+    res.render('links/add')
+});
 
 
 
