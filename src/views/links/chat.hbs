@@ -12,12 +12,18 @@
 <br>
 <br>
 <br>    
-    <p>Estas chateando como:</p>
-    <input id="user" value="{{user.username}}" readonly> </input>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
+    <div class="izquierda_chat">
+        <p class="title"> </p>
+        <b>Estas chateando como:</b>
+        <input class="b" id="user" value="{{user.username}}" readonly> </input>
+        <ul id="messages"></ul>
+        <form id="form" action="">
+        <input class="input_margen" id="input" autocomplete="off" /><button class="button">Enviar</button>
+        </form>
+        <div class="derecha_chat">
+            <img class="derecha_chat_img" src="images/unDraw/chat.svg" alt="Error al cargar la imagen" title="Chat">
+        </div>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io();
