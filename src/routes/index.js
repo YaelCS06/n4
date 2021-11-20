@@ -4,7 +4,6 @@ const {isLoggedIn, isNotLoggedIn} =require('../lib/auth');
 
 router.get('/',  async (req, res) => {
     res.render('index');
-    res.sendFile(__dirname + '/index.html');
 });
 
 
