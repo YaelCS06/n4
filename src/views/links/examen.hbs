@@ -36,6 +36,7 @@
         dataType:"text",
         success:function(data)
         {
+            
             document.getElementById("fin").removeAttribute("disabled"); 
         var employee_data = data.split(/\r?\n|\r/);
         var table_data = '<table class="table table-bordered table-striped">';
@@ -56,16 +57,6 @@
         table_data += '</table>';
         $('#employee_table').html(table_data);
         
-        },error: function(xhr, status, error){
-        window.swal("No tienes ningun examen pendiente");
-        }
-        });
-        });
- 
-    
-    </script>
-    </section>
-    <section>
         <div id="resultado">
             <form class="form_exam" name="quizForm" id="quizForm" onsubmit="return verificarRespuestas()">
                 <p id="examenes"></p>
@@ -983,10 +974,20 @@
                 </fieldset>
                 <center>
                     <form method="post" id="rexamen" action="">
-                        <input type="text" id="resultado" readonly required>
+                        <input type="text" id="resultado" readonly>
                     </form>
                     <button type="button" id="fin" onclick="verificarRespuesta()" disabled>Finalizar</button>
                     </center>
             </form>
-            <input type="text" readonly>
+            
         </div>
+        },error: function(xhr, status, error){
+        window.swal("No tienes ningun examen pendiente");
+        }
+        });
+        });
+ 
+    
+    </script>
+    </section>
+    
