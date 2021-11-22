@@ -1,5 +1,4 @@
-*{
-    font-family: 'Quicksand', sans-serif;
+*{    font-family: 'Quicksand', sans-serif;
 }
 body::-webkit-scrollbar{
     width: 5px;
@@ -9,6 +8,7 @@ body::-webkit-scrollbar-thumb{
     background: #1b3b91;
     border-radius: 5px;
 }
+
 body{
     background: #e6e6e6;
     font-family: 'Quicksand', sans-serif;
@@ -64,9 +64,10 @@ header nav{
     font-size: 15px;
     letter-spacing: 1px;
     bottom: 0;
+    right: 0;
+    left: 0;
     height: 62px;
-    line-height: 32px;
-    width: 100%;
+    line-height: 3´4px;
     z-index: 30;
 }
 section{
@@ -79,23 +80,18 @@ section{
     left: 0;
     right: 0;
 }
-header{
-    position: fixed;
-    background: #e6e6e6;
-    padding-bottom: 0.5rem;
-    width: 100%;
-    height: 14rem;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    transition: all 1s;
-    z-index: 20;
-}
 .logo{
     position: absolute;
     width: 100px;
     margin-top: 37px;
     margin-left: 34%;
+    transition: all 1s ease;
+}
+#logo2{
+    position: absolute;
+    width: 100px;
+    margin-top: 37px;
+    margin-left: 20%;
     transition: all 1s ease;
 }
 #menor_tam{
@@ -114,6 +110,12 @@ header{
     cursor: default;
 }
 #cecyts_imagenes{
+    margin-top: 250px;
+}
+#cecyts_imag{
+    margin-top: 250px;
+}
+#cecyts_imagen{
     margin-top: 250px;
 }
 .cecyts_article{
@@ -196,17 +198,15 @@ header{
 .texto_izq{
     display: inline-block;
     margin-top: 165px;
-    position: fixed;
     width: 50%;
     text-align: justify;
     font-size: 1em;
 }
 .imagen_derecha{
-    display: inline-block;
-    position: fixed;
-    width: 30%;
+    position: absolute;
+    width: 25%;
     margin-top: 20%;
-    margin-left: 55%;
+    margin-left: 150px;
 }
 b{
     color: #1b3b91;
@@ -227,6 +227,9 @@ iframe{
     box-shadow: rgba(27,59,145,0.3) 5px 5px 5px 5px;
     border-radius: 10px;
     transition: all 0.5s ease;
+    width: 600px;
+    height: 450px;
+    border: 0;
 }
 .puntuacion{
     margin-top: 550px;
@@ -258,7 +261,7 @@ iframe{
 }
 .text_dere{
     width: 50%;
-    margin-left: 15%;
+    margin-left: 10%;
     display: inline-block;
 }
 li{
@@ -272,7 +275,11 @@ li i{
     color: #1b3b91;
 }
 .imagen_dere{
+    position: absolute;
+    display: inline-block;
     width: 30%;
+    left: 50%;
+    top: 130%;
 }
 li a{
     color: black;
@@ -390,11 +397,8 @@ input:focus{
 input:focus~label{
     top: -14px;
 }
-.invalid{
-    color: red
-}
-.valid{
-    color: green;
+input:invalid ~ .label1{
+    color: rgb(204, 39, 39);
 }
 .barra{
     position: relative;
@@ -577,7 +581,7 @@ ul.slider li:target{
 #a{
     margin-left: 120px;
 }
-.justificado_pregunta{
+.justificado_preguntas{
     text-align: justify;
     margin-bottom: 10px;
 }
@@ -599,8 +603,8 @@ ul.slider li:target{
 }
 .derecha_chat_img{
     position: fixed;
-    width: 80%;
-    margin-left: 10%;
+    width: 37%;
+    margin-left: 5%;
 }
 .margenes_perfil{
     margin-top: -38px;
@@ -649,4 +653,328 @@ ul.slider li:target{
 }
 .user:hover + .user2{
     display: block;
+}
+.noOcultar{
+    display: block;
+}
+.ocultar{
+    display: none;
+}
+@media only screen and (max-width: 800px) {
+    .noOcultar{
+        display: none;
+    }
+    .ocultar{
+        display: block;
+    }
+    section{
+        background: #e6e6e6;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .logo{
+        width: 70px;
+        margin-top: 55px;
+        margin-left: 30px;
+    }
+    .fuente__title{
+        font-size: 2rem;
+        margin-top: 60px;
+        margin-left: 105px;
+    }
+    .texto_izq{
+        display: block;
+        margin-top: 165px;
+        position: inherit;
+        width: 100%;
+        text-align: justify;
+        font-size: 1em;
+    }
+    .imagen_derecha{
+        display: none;
+    }
+    /*Nav_________________________________________*/
+    header{
+        background: #e6e6e6;
+        padding-bottom: 0rem;
+        width: 100%;
+        height: 14rem;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        transition: all 1s;
+        z-index: 20;
+    }
+    header nav{
+        align-items: left;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+    header nav a{
+        display: inline-block;
+        position: relative;
+        font-weight: normal;
+        margin-right: 0;
+        font-size: 12px;
+        padding: 24px 20px;
+        margin-left: 2px;
+        line-height: 1;
+        left: 0;
+        right: 0;
+    }
+    /*_________________________________________*/
+    .article{
+        display: inline-block;
+        margin-top: 30px;
+        width: 42%;
+        padding: 5px;
+        margin-right: 0.5%;
+        margin-left: 0.5%;
+        height: 200px;
+    }
+    #cecyts_imag{
+        margin-top: 230px;
+    }
+    #cecyts_imagenes{
+        margin-top: 230px;
+    }
+    #cecyts_imagen{
+        margin-top: 30px;
+    }
+    #article_izq{
+        margin-left: 0%;
+    }
+    #margen_left_r{
+        margin-left: 26%;
+    }
+    .title2{
+        font-size: 1.3rem;
+    }
+    /*_______________________________________________________________________*/
+    form{
+        display: block;
+        width: 80%;
+        margin-top: 220px;
+        margin-left: 20%;
+    }
+    .button{
+        padding: 7px 15px;
+        border: 2px solid #1b3b91;
+        border-radius: 5px;
+        width: 90%;
+        margin-left: 5%;
+    }
+    .images_form{
+        display: inline-block;
+        position: absolute;
+        width: 60%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 10%;
+    }
+    /*_______________________________________________________________________________________________*/
+    .cecyts_article{
+        margin-top: 60px;
+        width: 90%;
+        padding: 5px;
+        margin-right: 0%;
+        margin-left: 2%;
+        height: 430px;
+    }
+    .cecyts_title{
+        color: #1b3b91;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .cecyts_subtitle{
+        color: #1b3b91;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #cet{
+        margin-left: 0;
+    }
+    #cecyts_imag{
+        margin-top: 230px;
+    }
+    #cecyts_img{
+        margin-top: 60px;
+    }
+    /*__________________________________________________________*/
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .lista__imagen{
+        width:80%;
+        margin-top: 20px;
+        margin-left: 10%;
+    }
+    .lista{
+        display: block;
+        width: 80%;
+        margin-left: 10%;
+    }
+    /*__________________________________________________________*/
+    .boton{
+        margin-top: 35px;
+        color: white;
+        font-weight: bold;
+        background: #1b3b91;
+        padding: 5px;
+        border-radius: 5px;
+        border: 2px solid #1b3b91;
+        text-align: center;
+        width: 20%;
+        margin-left: 35%;
+    }
+    .text_dere{
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 40px;
+        margin-top: 35px;
+    }
+    .imagen_dere{
+        display: none;
+    }
+    .title{
+        margin-top: 250px;
+        font-size: 1.5rem;
+    }
+    iframe{
+        display: block;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        width: 80%;
+        height: 27%;
+        margin-left: 5%;
+        border: 0;
+    }
+    .text_izq{
+        display: block;
+        position: absolute;
+        width: 80%;
+        margin-top: 52%;
+        margin-left: 3%;
+    }
+    .foto{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        margin-left: 0;
+        border-radius: 10px;
+    }
+    .justificado{
+        width: 90%;
+        margin-left: 5%;
+    /*_________________________________________________________________*/
+    }.derecha{
+        width: 90%;
+        margin-left: 5%;
+        display: block;
+    }
+    .izquierda{
+        width: 90%;
+        margin-left: 5%;
+        display: block;
+        position: inherit;
+        margin-top: 8%;
+    }
+    .derecha2{
+        width: 90%;
+        margin-left: 5%;
+        display: block;
+        position: inherit;
+        margin-top: 8%;
+    }
+    .izquierda2{
+        width: 90%;
+        margin-left: 5%;
+        display: block;
+    }
+    .images{
+        width: 95%;
+        transition: all 0.5s ease;
+        border-radius: 15px;
+    }
+    #segunda_imagen{
+        margin-top: 20px;
+    }
+    #texto__izq{
+        display: block;
+        position: inherit;
+        width: 80%;
+        margin-top: 250px;
+        margin-left: 10%;
+        text-align: justify;
+    }
+    .espacio4{
+        height: 0px;
+    }
+    b{
+        text-align: justify;
+    }
+    /*_______________________________________________*/
+    .user{
+        position: absolute;
+        margin-top: 90%;
+        width: 25%;
+    }
+    .user2{
+        position: absolute;
+        margin-top: 90%;
+        width: 25%;
+    }
+    .datos_perfil{
+        position: absolute;
+        margin-top: 45%;
+        margin-left: 35%;
+    }
+    /*___________________________________________*/
+    .images_exam{
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 30px;
+    }
+    .button2{
+        padding: 7px 15px;
+        border-radius: 5px;
+        width: 40%;
+    }
+    .respuestas{
+        display: block;
+        width: 90%;
+        margin-left: 1%;
+        margin-bottom: 30px;
+    }
+    .form_exam{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .form_exam label{
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;   
+    }
+    #a{
+        margin-left: 5px;
+    }
+}
+.botoncito{
+    color: white;
+}
+.botoncito a:hover{
+    color: black;
 }

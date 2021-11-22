@@ -82,19 +82,7 @@ router.get('/aula', (req, res) =>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-router.get('/add', (req, res) =>{
+router.get('/archivos', (req, res) =>{
     res.render('links/add')
 });
 
@@ -115,11 +103,6 @@ router.post('/add', async(req, res) =>{
 
 });
 
-router.get('/', async (req,res) =>{
-    const usuarios = await pool.query('SELECT * FROM usuarios');
-    res.render('links/list', {usuarios});
-
-});
 
 router.get('/delete/:usuario', async(req, res) =>{
     const {usuario} = req.params;

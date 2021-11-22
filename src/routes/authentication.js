@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const {isLoggedIn, isNotLoggedIn} =require('../lib/auth');
+const {isLoggedIn, isNotLoggedIn, isAdmin} =require('../lib/auth');
 const pool = require('../database');
 
+//Render y redirect de registro
 router.get('/signup', isNotLoggedIn, (req, res) => {
   res.render('auth/signup');
 });
@@ -14,26 +15,34 @@ router.post('/signup', passport.authenticate('local.signup', {
   failureFlash: true
 }));
 
+//Render y redirect de inicio de sesion
 router.get('/signin', isNotLoggedIn, (req, res) =>{
   res.render('auth/signin')
 });
 
 router.post('/signin',  (req, res, next) =>{
   passport.authenticate('local.signin', {
-    successRedirect: '/profile',
+    successRedirect: '/administrator',
     failureRedirect: '/signin',
     failureFlash: true
   })(req, res, next)
 });
 
 
+//Redirect de usuario
 router.get('/profile', isLoggedIn, async (req,res) =>{
   const resultados = await pool.query('SELECT * FROM examen where ID_examen =?', [req.user.ID]);
   res.render('profile', {resultados});
 });
 
 
+//Redirect de admin
+router.get('/administrator', isAdmin, async (req,res) =>{
+  const usuarios = await pool.query('SELECT * FROM usuarios');
+  res.render('links/list', {usuarios});
+});
 
+//Cerrar sesion
 router.get('/logout', (req, res) =>{
   req.logOut();
   res.redirect('/signin')
