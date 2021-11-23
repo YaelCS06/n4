@@ -8,6 +8,46 @@ const pool = require('../database');
     router.get('/examen', (req, res) =>{
         res.render('links/examen')
     });
+    router.post('/examen', async (req, res) => {
+            const newexam ={ID_us,ID_examen};
+            const newresult ={ID_us,ID_examen};
+            const newmater ={IDExm,Biologia,Quimica,Formacion,Geografia,Historia,Español,Matemaicas,Fisica};
+
+            await pool.query('INSERT INTO resultados_examenes set ?', [newexam]);
+            await pool.query('INSERT INTO examen set ?', [newresult]);
+            await pool.query('INSERT INTO materia set ?', [newmater]);
+            res.redirect('/profile');
+    });
+    
+//Cuestionario
+router.get('/cuestionario', (req, res) =>{
+    res.render('links/cuestionario')
+});
+router.post('/cuestionario', async(req, res) =>{
+    const { cuadrito } = req.body;
+    const newCuest = {
+        resultado: cuadrito,
+        user_id: req.user.ID
+    };
+    await pool.query('INSERT INTO cuestionario set ?', [newCuest]);
+    res.redirect('/profile');
+});
+
+
+router.post('/add', async(req, res) =>{
+    const { Nombre, Ap_pat,Ap_mat,correo,usuario,contra} =req.body;
+    const newLink ={
+        Nombre,
+        Ap_pat,
+        Ap_mat,
+        correo,
+        usuario,
+        contra
+    };
+    await pool.query('INSERT INTO usuarios set ?', [newLink]);
+    res.redirect('/links');
+
+});
 
 //Comipems
     router.get('/comipems', (req, res) =>{
@@ -80,28 +120,13 @@ router.get('/aula', (req, res) =>{
 
 
 
-
+//
 
 router.get('/archivos', (req, res) =>{
     res.render('links/add')
 });
 
 
-
-router.post('/add', async(req, res) =>{
-    const { Nombre, Ap_pat,Ap_mat,correo,usuario,contra} =req.body;
-    const newLink ={
-        Nombre,
-        Ap_pat,
-        Ap_mat,
-        correo,
-        usuario,
-        contra
-    };
-    await pool.query('INSERT INTO usuarios set ?', [newLink]);
-    res.redirect('/links');
-
-});
 
 
 router.get('/delete/:usuario', async(req, res) =>{
