@@ -5,10 +5,10 @@
             <p title="NoNeim" class= "fuente__title animate__animated animate__bounceInUp animate__slower">NoNeim</p>
         </div>
         <nav>
-            <a href="/administrator"><i class="fas fa-user"></i> Usuarios </a>   
-            <a href="/resultados"><i class="fas fa-user"></i> Resultados </a>                     
-    <a href="/administrator/archivos"><i class="fas fa-comments"></i> Archivos</a>        
-    <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+            <a href="/administrator"><i class="fas fa-user"></i> Usuarios </a>            
+            <a href="/resultados"><i class="fas fa-user"></i> Resultados </a>            
+            <a href="/administrator/archivos"><i class="fas fa-comments"></i> Archivos</a>        
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
         </nav>
     </header>
         <br>
@@ -21,17 +21,15 @@
 
     <div class="container p-4">
         <div class="row">
-            {{#each usuarios}}
+            {{#each resultados}}
                 <div class="col-md-4">
                     <div class="card text-center">
                         <div class="card-body">
                           <h2 class="card-title text-upprecase">
-                              {{username}}
+                              {{Ap_pat}}{{Ap_mat}}{{Nombre}}
                           </h2>  
-                          <p class="m-1">{{Ap_pat}} {{Ap_mat}} {{Nombre}}</p>
-                          <p class="m-1">{{correo}}</p>
-                          <p class="m-1">{{password}}</p>
-                          <a href="/delete/{{username}}" class="btn btn-danger">Eliminar</a>
+                          <p class="m-1">{{resultado}}</p>
+                          <a href="/delete/{{user_id}}" class="btn btn-danger">Eliminar</a>
                         </div>
                     </div>
                 </div>

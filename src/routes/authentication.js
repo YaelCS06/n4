@@ -42,6 +42,12 @@ router.get('/administrator', isAdmin, async (req,res) =>{
   res.render('links/list', {usuarios});
 });
 
+router.get('/resultados', isAdmin, async (req,res) =>{
+  const resultados = await pool.query('SELECT u.Ap_pat,u.Ap_mat,u.Nombre, c.resultado  from usuarios as u inner join cuestionario as c on u.ID=c.user_id');
+  res.render('links/listresult', {resultados});
+});
+
+
 //Cerrar sesion
 router.get('/logout', (req, res) =>{
   req.logOut();

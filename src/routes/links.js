@@ -34,21 +34,6 @@ router.post('/cuestionario', async(req, res) =>{
 });
 
 
-router.post('/add', async(req, res) =>{
-    const { Nombre, Ap_pat,Ap_mat,correo,usuario,contra} =req.body;
-    const newLink ={
-        Nombre,
-        Ap_pat,
-        Ap_mat,
-        correo,
-        usuario,
-        contra
-    };
-    await pool.query('INSERT INTO usuarios set ?', [newLink]);
-    res.redirect('/links');
-
-});
-
 //Comipems
     router.get('/comipems', (req, res) =>{
         res.render('links/comipems')
@@ -128,11 +113,10 @@ router.get('/archivos', (req, res) =>{
 
 
 
-
 router.get('/delete/:usuario', async(req, res) =>{
     const {usuario} = req.params;
     await pool.query('DELETE FROM usuarios WHERE username = ?',[usuario]);
-    res.redirect('/links');
+    res.redirect('/administrator');
 });
 
 
