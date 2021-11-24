@@ -120,18 +120,6 @@ router.get('/archivos', isAdmin, (req, res) =>{
 
 
 
-router.get('/delete/:usuario', async(req, res) =>{
-    const {usuario} = req.params;
-    await pool.query('DELETE FROM usuarios WHERE username = ?',[usuario]);
-    res.redirect('/administrator');
-});
-
-router.get('/deletec/:id', async(req, res) =>{
-    const {id} = req.params;
-    await pool.query('DELETE FROM cuestionario WHERE user_id = ?',[id]);
-    res.redirect('/resultados');
-});
-
 
 
 module.exports = router;
