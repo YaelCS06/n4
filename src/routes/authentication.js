@@ -32,7 +32,8 @@ router.post('/signin',  (req, res, next) =>{
 //Redirect de usuario
 router.get('/profile', isLoggedIn, async (req,res) =>{
   const resultadoscuest = await pool.query('SELECT * FROM cuestionario where user_id =?', [req.user.ID]);
-  res.render('profile', {resultadoscuest});
+  const resultadosexam = await pool.query('SELECT * FROM examen where Id_user =?', [req.user.ID]);
+  res.render('profile', {resultadoscuest},{resultadosexam});
 });
 
 

@@ -984,12 +984,19 @@
                         <label class="label" for="d80">D</label>
                     </div>
                 </fieldset>
-                <center>
-                    <form method="post" id="rexamen" action="">
-                        <input type="text" id="resultado" readonly required>
+                
+                     <form method="post" id="rexamen" name="rexamen" hidden>
+                        <input type="text" name="cuadrito" id="cuadrito" readonly hidden>
+                        <input type="text" name="matematicas" id="matematicas" readonly hidden>
+                        <input type="text" name="espa" id="espa" readonly hidden>
+                        <input type="text" name="biologia" id="biologia" readonly hidden>
+                        <input type="text" name="fisica" id="fisica" readonly hidden>
+                        <input type="text" name="quimica" id="quimica" readonly hidden>
+                        <input type="text" name="historia" id="historia" readonly hidden>
+                        <input type="text" name="geografia" id="geografia" readonly hidden>
+                        <input type="text" name="formacion" id="formacion" readonly hidden>
+                        <button type="button" id="fin" onclick="verificarRespuesta()" hidden disabled>Finalizar</button>
                     </form>
-                    <button type="button" id="fin" onclick="verificarRespuesta()" hidden disabled>Finalizar</button>
-                    </center>
             </form>
             <input type="text" readonly>
         </div>

@@ -28,17 +28,17 @@ function verificarRespuesta(){
     var r6 = arreglo[5]-(r5+r4+r3+r2+r1);
     var r7 = arreglo[6]-(r6+r5+r4+r3+r2+r1);
     var r8 = arreglo[7]-(r7+r6+r5+r4+r3+r2+r1);
-    console.log(r1);
-    console.log(r2);
-    console.log(r3);
-    console.log(r4);
-    console.log(r5);
-    console.log(r6);
-    console.log(r7);
-    console.log(r8);
-    rest.innerHTML = "Tu resultado fue: "+puntos;
-    window.swal(puntos);
-    return false;
+    document.getElementById("matematicas").value = r1;
+    document.getElementById("espa").value = r2;
+    document.getElementById("biologia").value = r3;
+    document.getElementById("fisica").value = r4;
+    document.getElementById("quimica").value = r5;
+    document.getElementById("historia").value = r6;
+    document.getElementById("geografia").value = r7;
+    document.getElementById("formacion").value = r8;
+    document.getElementById("cuadrito").value = puntos;
+    swal("Tu resultado es : "+ puntos);
+    document.rexamen.submit();
 }
 function verificarRespuestaCu(){
     var total = 10;
