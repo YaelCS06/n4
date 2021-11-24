@@ -1,7 +1,6 @@
 function verificarRespuesta(){
     var total = 80;
     var puntos = 0;
-    var rest = document.getElementById("resultado");
     var myForm = document.forms["quizForm"];
     var arreglo = [];
     var respuestas = ["a","a","c","c","c","b","c","b","b","c","a","b","b","c","c","b","b","a","c","d","c","a","a","a","a","d","d","d","a","a","a","c","b","c","c","a","c","b","c","b","a","b","c","c","d","c","b","c","c","b","a","a","b","c","b","a","d","a","d","c","b","d","a","c","d","b","c","d","b","a","a","a","b","a","b","c","c","c","a","b"];

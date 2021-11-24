@@ -39,6 +39,7 @@
             document.getElementById("quizForm").removeAttribute("hidden"); 
             document.getElementById("fin").removeAttribute("hidden"); 
             document.getElementById("fin").removeAttribute("disabled"); 
+            document.getElementById("rexamen").removeAttribute("hidden"); 
         var employee_data = data.split(/\r?\n|\r/);
         var table_data = '<table class="table table-bordered table-striped">';
         for(var count = 0; count<employee_data.length; count++){
@@ -985,7 +986,9 @@
                     </div>
                 </fieldset>
                 
-                     <form method="post" id="rexamen" name="rexamen" hidden>
+                   
+            </form>
+              <form method="post" id="rexamen" name="rexamen" hidden>
                         <input type="text" name="cuadrito" id="cuadrito" readonly hidden>
                         <input type="text" name="matematicas" id="matematicas" readonly hidden>
                         <input type="text" name="espa" id="espa" readonly hidden>
@@ -997,6 +1000,5 @@
                         <input type="text" name="formacion" id="formacion" readonly hidden>
                         <button type="button" id="fin" onclick="verificarRespuesta()" hidden disabled>Finalizar</button>
                     </form>
-            </form>
-            <input type="text" readonly>
+            
         </div>

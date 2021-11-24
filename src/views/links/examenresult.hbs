@@ -10,9 +10,10 @@
                                 <div class="col-md-4 mx-auto">
                                     <div class="card-body">
                                         <p class="title2">Bienvenido {{user.username}}</p>
+                                            
                                             <br>
                                             <button class="button" ><a  href="/usuario/aula"><i class="fas fa-chalkboard-teacher"></i> Aula</a></button>
-                                            <button class="button" ><a  href="/resultadosexm"><i class="fas fa-chalkboard-teacher"></i> Ressultados de examen</a></button>
+                                            <button class="button" ><a  href="/profile"><i class="fas fa-chalkboard-teacher"></i> Ressultados de cuestionaros</a></button>
                                     </div>
                                 </div>
                             </div>
@@ -21,14 +22,31 @@
                 </div>
                 <div class="container p-4">
                     <div class="row">
-                        {{#each resultadoscuest}}
+                        {{#each resultadosexm}}
                             <div class="col-md-4">
                                 <div class="card text-center">
                                     <div class="card-body">
                                     <h2 class="card-title text-upprecase title2">
-                                        Resultado de Cuestionario
+                                        Resultado de examen
                                     </h2>  
-                                    <b class="m-1">{{resultado}}</b>
+                                    
+                                    <b class="m-1">Total:{{resultado}}</b>
+                                    <br>
+                                    <b class="m-1">Matematicas: {{matematicas}}</b>
+                                    <br>
+                                    <b class="m-1">Español: {{espa}}</b>
+                                    <br>
+                                    <b class="m-1">Biologia: {{biologia}}</b>
+                                    <br>
+                                    <b class="m-1">Fisica: {{fisica}}</b>
+                                    <br>
+                                    <b class="m-1">Quimica: {{quimica}}</b>
+                                    <br>
+                                    <b class="m-1">Historia: {{historia}}</b>
+                                    <br>
+                                    <b class="m-1">Geografia: {{geografia}}</b>
+                                    <br>
+                                    <b class="m-1">Formacion: {{formacion}}</b>
                                     </div>
                                 </div>
                             </div>

@@ -24,7 +24,7 @@ router.post('/examen', async (req, res) => {
         formacion: formacion
     };
     await pool.query('INSERT INTO examen set ?', [newExam]);
-    res.redirect('/profile');
+    res.redirect('/resultadosexm');
 });
     
 //Cuestionario
@@ -106,9 +106,11 @@ router.get('/chat', isLoggedIn,(req, res) =>{
     res.render('links/chat')
 });
 
+//aula
 router.get('/aula', isLoggedIn,(req, res) =>{
     res.render('links/aula')
 });
+
 
 //
 
@@ -123,6 +125,13 @@ router.get('/delete/:usuario', async(req, res) =>{
     await pool.query('DELETE FROM usuarios WHERE username = ?',[usuario]);
     res.redirect('/administrator');
 });
+
+router.get('/deletec/:id', async(req, res) =>{
+    const {id} = req.params;
+    await pool.query('DELETE FROM cuestionario WHERE user_id = ?',[id]);
+    res.redirect('/resultados');
+});
+
 
 
 module.exports = router;

@@ -32,10 +32,12 @@ router.post('/signin',  (req, res, next) =>{
 //Redirect de usuario
 router.get('/profile', isLoggedIn, async (req,res) =>{
   const resultadoscuest = await pool.query('SELECT * FROM cuestionario where user_id =?', [req.user.ID]);
-  const resultadosexam = await pool.query('SELECT * FROM examen where Id_user =?', [req.user.ID]);
-  res.render('profile', {resultadoscuest},{resultadosexam});
+  res.render('profile', {resultadoscuest});
 });
-
+router.get('/resultadosexm', isLoggedIn, async (req,res) =>{
+  const resultadosexm = await pool.query('SELECT * FROM examen where Id_user =?', [req.user.ID]);
+  res.render('links/examenresult', {resultadosexm});
+});
 
 //Redirect de admin
 router.get('/administrator', isAdmin, async (req,res) =>{
@@ -44,8 +46,13 @@ router.get('/administrator', isAdmin, async (req,res) =>{
 });
 
 router.get('/resultados', isAdmin, async (req,res) =>{
-  const resultados = await pool.query('SELECT u.Ap_pat,u.Ap_mat,u.Nombre, c.resultado  from usuarios as u inner join cuestionario as c on u.ID=c.user_id');
+  const resultados = await pool.query('SELECT u.Ap_pat,u.Ap_mat,u.Nombre, c.resultado, c.user_id from usuarios as u inner join cuestionario as c on u.ID=c.user_id');
   res.render('links/listresult', {resultados});
+});
+
+router.get('/examenes', isAdmin, async (req,res) =>{
+  const resultados = await pool.query('SELECT u.Ap_pat,u.Ap_mat,u.Nombre, e.resultado  from usuarios as u inner join examen as e on u.ID=e.Id_user');
+  res.render('links/listexam', {resultados});
 });
 
 
