@@ -90,3 +90,18 @@ io.on('connection', (socket) => {
     io.emit('chat message', msg);
   });
 });
+
+
+
+
+
+
+var Rollbar = require ( "rollbar" );
+var rollbar = new Rollbar ({
+   accessToken : 'adfc7455c9384a8e923d009142394c58' ,
+   captureUncaught : true ,
+   captureUnhandledRejections : true
+});
+
+// grabar un mensaje genérico y enviarlo a Rollbar 
+rollbar.log ( "¡Hola mundo!" );
