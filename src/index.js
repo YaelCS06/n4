@@ -7,16 +7,6 @@ const flash = require('connect-flash');
 const MySQLStore = require('express-mysql-session');
 const { database } = require('./keys');
 const passport = require('passport');
-const multer = require('multer');
-const storage = multer.diskStorage({
-  destination: '/src/public/doc',
-  filename: function(req,file,cb){
-    cb("","Examen.csv");
-  }
-})
-const upload = multer({
-  storage: storage
-})
 
 //Inicializar
 const app = express();
@@ -53,11 +43,6 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-
-app.post('/files', upload.single('avatar'),(req,res)=>{
-  res.send('todo bien');
-})
 
 
 //Variables globales
