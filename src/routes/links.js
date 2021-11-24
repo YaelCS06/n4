@@ -111,15 +111,4 @@ router.get('/aula', isLoggedIn,(req, res) =>{
     res.render('links/aula')
 });
 
-
-//
-
-router.get('/archivos', isAdmin, (req, res) =>{
-    res.render('links/add')
-});
-
-
-
-
-
 module.exports = router;

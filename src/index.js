@@ -7,11 +7,20 @@ const flash = require('connect-flash');
 const MySQLStore = require('express-mysql-session');
 const { database } = require('./keys');
 const passport = require('passport');
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: '/src/public/doc',
+  filename: function(req,file,cb){
+    cb("","Examen.csv");
+  }
+})
+const upload = multer({
+  storage: storage
+})
 
 //Inicializar
 const app = express();
 require('./lib/passport');
-
 
 
 //configuraciones
@@ -45,6 +54,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+
+app.post('/files', upload.single('avatar'),(req,res)=>{
+  res.send('todo bien');
+})
+
+
 //Variables globales
 app.use((req, res, next) => {
   app.locals.message = req.flash('message');
@@ -67,8 +82,6 @@ const http = require('http')
 const server = http.createServer(app);
 const {Server} = require('socket.io');
 const io = new Server(server);
-//Startin the server
-
 
 //Websocketsitos
 
@@ -76,7 +89,7 @@ io.on('connection', (socket)=>{
   console.log("nuevo usuario");
 })
 
-
+    //Startin the server
 server.listen(app.get('port'), () =>{
   console.log('Server on port', app.get('port'));
 });
