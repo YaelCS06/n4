@@ -2,7 +2,11 @@ module.exports={
     //si esta logeado
     isLoggedIn(req, res, next){
         if(req.isAuthenticated()){
+            if(req.user.ID=="55"){
+                return res.redirect('/administrator');
+            }else{
             return next();
+        }
         }
         return res.redirect('/signin');
     },

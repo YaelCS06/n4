@@ -1,11 +1,12 @@
 const { request } = require('express');
 const express = require('express');
 const router = express.Router();
-
+const {isLoggedIn,isAdmin} =require('../lib/auth');
 const pool = require('../database');
 
+
 //Examen
-    router.get('/examen', (req, res) =>{
+    router.get('/examen', isLoggedIn, (req, res) =>{
         res.render('links/examen')
     });
     router.post('/examen', async (req, res) => {
@@ -20,7 +21,7 @@ const pool = require('../database');
     });
     
 //Cuestionario
-router.get('/cuestionario', (req, res) =>{
+router.get('/cuestionario', isLoggedIn, (req, res) =>{
     res.render('links/cuestionario')
 });
 router.post('/cuestionario', async(req, res) =>{
@@ -35,70 +36,70 @@ router.post('/cuestionario', async(req, res) =>{
 
 
 //Comipems
-    router.get('/comipems', (req, res) =>{
+    router.get('/comipems', isLoggedIn,(req, res) =>{
         res.render('links/comipems')
     });
 
 //Escuelas
 
-    router.get('/escuelas', (req, res) =>{
+    router.get('/escuelas',isLoggedIn, (req, res) =>{
         res.render('links/escuelaspag')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt1')
     });
-    router.get('/cecyt2', (req, res) =>{
+    router.get('/cecyt2', isLoggedIn, (req, res) =>{
         res.render('escuelas/cecyt2')
     });
-    router.get('/cecyt3', (req, res) =>{
+    router.get('/cecyt3', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt3')
     });
-    router.get('/cecyt4', (req, res) =>{
+    router.get('/cecyt4', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt4')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn, (req, res) =>{
         res.render('escuelas/cecyt5')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt6')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt7')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt8')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn, (req, res) =>{
         res.render('escuelas/cecyt9')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt10')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt11')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt12')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt13')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt14')
     });
-    router.get('/cecyt1', (req, res) =>{
+    router.get('/cecyt1', isLoggedIn,(req, res) =>{
         res.render('escuelas/cecyt15')
     });
-    router.get('/cet1', (req, res) =>{
+    router.get('/cet1',isLoggedIn, (req, res) =>{
         res.render('escuelas/cet1')
     });
 //Chat
 
-router.get('/chat', (req, res) =>{
+router.get('/chat', isLoggedIn,(req, res) =>{
     res.render('links/chat')
 });
 
-router.get('/aula', (req, res) =>{
+router.get('/aula', isLoggedIn,(req, res) =>{
     res.render('links/aula')
 });
 
@@ -107,7 +108,7 @@ router.get('/aula', (req, res) =>{
 
 //
 
-router.get('/archivos', (req, res) =>{
+router.get('/archivos', isAdmin, (req, res) =>{
     res.render('links/add')
 });
 

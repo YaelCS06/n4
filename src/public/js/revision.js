@@ -22,12 +22,12 @@ function verificarRespuesta(){
     }
     var r1 = arreglo[0];
     var r2 = arreglo[1]-r1;
-    var r3 = arreglo[2]-r2;
-    var r4 = arreglo[3]-r3;
-    var r5 = arreglo[4]-r4;
-    var r6 = arreglo[5]-r5;
-    var r7 = arreglo[6]-r6;
-    var r8 = arreglo[7]-r7;
+    var r3 = arreglo[2]-(r2+r1);
+    var r4 = arreglo[3]-(r3+r2+r1);
+    var r5 = arreglo[4]-(r4+r3+r2+r1);
+    var r6 = arreglo[5]-(r5+r4+r3+r2+r1);
+    var r7 = arreglo[6]-(r6+r5+r3+r2+r1);
+    var r8 = arreglo[7]-(r7+r6+r5+r4+r3+r2+r1);
     console.log(r1);
     console.log(r2);
     console.log(r3);
