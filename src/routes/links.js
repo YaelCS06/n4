@@ -64,42 +64,40 @@ router.get('/cecyt3', isLoggedIn,(req, res) =>{
 router.get('/cecyt4', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt4')
 });
-router.get('/cecyt1', isLoggedIn, (req, res) =>{
+router.get('/cecyt5', isLoggedIn, (req, res) =>{
     res.render('escuelas/cecyt5')
 });
-router.get('/cecyt1', isLoggedIn,(req, res) =>{
+router.get('/cecyt6', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt6')
 });
-router.get('/cecyt1', isLoggedIn,(req, res) =>{
+router.get('/cecyt7', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt7')
 });
-router.get('/cecyt1', isLoggedIn,(req, res) =>{
+router.get('/cecyt8', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt8')
 });
-router.get('/cecyt1', isLoggedIn, (req, res) =>{
+router.get('/cecyt9', isLoggedIn, (req, res) =>{
     res.render('escuelas/cecyt9')
 });
-router.get('/cecyt1', isLoggedIn,(req, res) =>{
+router.get('/cecyt10', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt10')
 });
-router.get('/cecyt1', isLoggedIn,(req, res) =>{
+router.get('/cecyt11', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt11')
 });
-router.get('/cecyt1', isLoggedIn,(req, res) =>{
+router.get('/cecyt12', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt12')
 });
-router.get('/cecyt1', isLoggedIn,(req, res) =>{
+router.get('/cecyt13', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt13')
 });
-router.get('/cecyt1', isLoggedIn,(req, res) =>{
+router.get('/cecyt14', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt14')
 });
-router.get('/cecyt1', isLoggedIn,(req, res) =>{
+router.get('/cecyt15', isLoggedIn,(req, res) =>{
     res.render('escuelas/cecyt15')
 });
-router.get('/cet1',isLoggedIn, (req, res) =>{
-    res.render('escuelas/cet1')
-});
+
 //Chat
 
 router.get('/chat', isLoggedIn,(req, res) =>{

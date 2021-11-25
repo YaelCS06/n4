@@ -54,9 +54,7 @@ router.get('/examenes', isAdmin, async (req,res) =>{
   const resultados = await pool.query('SELECT u.Ap_pat,u.Ap_mat,u.Nombre, e.resultado from usuarios as u inner join examen as e on u.ID=e.Id_user');
   res.render('links/listexam', {resultados});
 });
-router.get('/archivos', isAdmin, (req,res) =>{
-  res.render('links/add');
-});
+
 
 
 //Cerrar sesion
