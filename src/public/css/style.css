@@ -1,4 +1,5 @@
-*{    font-family: 'Quicksand', sans-serif;
+*{
+    font-family: 'Quicksand', sans-serif;
 }
 body::-webkit-scrollbar{
     width: 5px;
@@ -297,7 +298,8 @@ li a{
 }
 .boton{
     text-decoration: none;
-    margin-top: 15px;
+    margin-top: 45px;
+    margin-bottom: 45px;
     color: white;
     font-weight: bold;
     background: #1b3b91;
@@ -654,6 +656,30 @@ ul.slider li:target{
 .user:hover + .user2{
     display: block;
 }
+/*_________________________________________________________________*/
+.ventana{
+    display: none;
+    position: absolute;
+    width: 80%;
+    margin-top: -50%;
+    background: #e6e6e6;
+    padding: 30px;
+    color: black;
+    border-radius: 15px;
+    border: 1px solid #1b3b91;
+    box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 3px;
+    z-index: 30;
+    font-size: 0.9em;
+}
+.aparecer{
+    cursor: pointer;
+    margin-top: 10px;
+    left: 0;
+}
+/*_________________________________________________________________*/
+#noOcultar{
+    display: block;
+}
 .noOcultar{
     display: block;
 }
@@ -664,8 +690,19 @@ ul.slider li:target{
     .noOcultar{
         display: none;
     }
+    #noOcultar{
+        display: none;
+    }
     .ocultar{
         display: block;
+    }
+    .ventana{
+        width: 90%;
+        margin-top: 0%;
+        margin-bottom: 70%;
+        padding: 15px;
+        z-index: 30;
+        left: 0;
     }
     section{
         background: #e6e6e6;
@@ -971,10 +1008,4 @@ ul.slider li:target{
     #a{
         margin-left: 5px;
     }
-}
-.botoncito{
-    color: white;
-}
-.botoncito a:hover{
-    color: black;
 }
