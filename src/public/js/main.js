@@ -1,3 +1,13 @@
+$(function(){
+    $(window).scroll(function(){
+        var winTop = $(window).scrollTop();
+        if(winTop >=60){
+            $("body").addClass("sticky-header");
+        }else{
+            $("body").removeClass("sticky-header");
+        }
+    })
+})
 function validarn(e){
     var teclado = (document.all) ? e.keyCode : e.which;
     if(teclado == 8)return true;
