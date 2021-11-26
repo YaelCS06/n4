@@ -20,30 +20,30 @@
 
 <section>
     
-    <form method="post" name="registropreguntas" id="formS">
+    <form method="post" name="registropreguntas" action="/edit/{{pregunta.numero}}" id="formS">
         <div class="form">
             <p class="title2">Editar pregunta de Examen</p>
         <div class="grupo" id="grupo__nombre">
-            <input type="text" name="Pregunta" value="{{Pregunta}}" required><span class="barra"></span>
+            <input type="text" name="Pregunta" value="{{pregunta.Pregunta}}" required><span class="barra"></span>
             <label class="label1" for="">Pregunta</label>
         </div>
         <div class="grupo">
-            <input type="text" name="A" value=""  required><span class="barra"></span>
+            <input type="text" name="A" value="{{pregunta.A}}"  required><span class="barra"></span>
             <label class="label1" for="">Inciso A</label>
         </div>
         <div class="grupo">
-            <input type="text" name="B" value=""  required><span class="barra"></span>
+            <input type="text" name="B" value="{{pregunta.B}}"  required><span class="barra"></span>
             <label class="label1" for="">Inciso B</label>
         </div>
         <div class="grupo">
-            <input type="text" name="C" value="" required><span class="barra"></span>
+            <input type="text" name="C" value="{{pregunta.C}}" required><span class="barra"></span>
             <label class="label1" for="">Inciso C</label>
         </div>
         <div class="grupo">
-            <input type="text" name="D" value=""  required><span class="barra"></span>
+            <input type="text" name="D" value="{{pregunta.D}}"  required><span class="barra"></span>
             <label class="label1" for="">Inciso D</label>
         </div>
-        <input class="button" type="submit" value="Agregar pregunta">
+        <input class="button" type="submit" value="Actualizar pregunta">
         </div>
     </form>
 </section>

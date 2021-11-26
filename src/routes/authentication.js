@@ -83,12 +83,26 @@ router.get('/delete/:pregunta', async (req,res) =>{
   res.redirect('/modifyexam');
 
 });
+
 router.get('/edit/:numero', async (req,res) =>{
   const {numero} = req.params;
-  const num = await pool.query('SELECT * FROM preguntas WHERE numero = ?'[numero]);
-  res.render('links/edit', {num: num});
+  const pregunta = await pool.query('SELECT * FROM preguntas WHERE numero = ?', [numero])
+  res.render('links/edit', {pregunta: pregunta[0]});
 });
 
+router.post('/edit/:numero', async (req,res) =>{
+  const { numero } = req.params;
+  const {Pregunta, A, B, C, D} = req.body;
+  const actAsk = {
+    Pregunta,
+    A,
+    B,
+    C,
+    D
+  }
+  await pool.query('UPDATE preguntas set ? WHERE numero = ?', [actAsk, numero]);
+  res.redirect('/modifyexam');
+});
 
 router.get('/chat', isLoggedIn,(req, res) =>{
   res.render('links/chat')
