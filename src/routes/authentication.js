@@ -76,12 +76,19 @@ router.get('/modifyexam', isAdmin, async (req,res) =>{
   const exam = await pool.query('SELECT * FROM preguntas')
   res.render('links/tablaexamen', {exam: exam});
 });
-
+router.get('/cuest', isAdmin, async (req,res) =>{
+  const exam = await pool.query('SELECT * FROM preguntas')
+  res.render('links/cuestadmin', {exam: exam});
+});
 router.get('/delete/:pregunta', async (req,res) =>{
   const {pregunta} = req.params;
   await pool.query('DELETE FROM preguntas where Pregunta = ?', [pregunta]);
   res.redirect('/modifyexam');
-
+});
+router.get('/deleteuser/:username', async (req,res) =>{
+  const {username} = req.params;
+  await pool.query('DELETE FROM usuarios where username = ?', [username]);
+  res.redirect('/administrator');
 });
 
 router.get('/edit/:numero', async (req,res) =>{

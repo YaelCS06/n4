@@ -6,8 +6,9 @@ const pool = require('../database');
 
 
 //Examen
-router.get('/examen', isLoggedIn, (req, res) =>{
-    res.render('links/examen');
+router.get('/examen', isLoggedIn, async(req, res) =>{
+    const exam = await pool.query('SELECT * FROM preguntas')
+    res.render('links/examen', {exam: exam});
 });
 router.post('/examen', async (req, res) => {
     const { cuadrito, matematicas, espa, biologia, fisica, quimica, historia, geografia, formacion } = req.body;
@@ -28,6 +29,9 @@ router.post('/examen', async (req, res) => {
 });
     
 //Cuestionario
+router.get('/materias', isLoggedIn, (req, res) =>{
+    res.render('links/materias')
+});
 router.get('/cuestionario', isLoggedIn, (req, res) =>{
     res.render('links/cuestionario')
 });
