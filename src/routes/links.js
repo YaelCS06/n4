@@ -100,9 +100,6 @@ router.get('/cecyt15', isLoggedIn,(req, res) =>{
 
 //Chat
 
-router.get('/chat', isLoggedIn,(req, res) =>{
-    res.render('links/chat')
-});
 
 //aula
 router.get('/aula', isLoggedIn,(req, res) =>{

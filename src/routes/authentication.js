@@ -55,7 +55,44 @@ router.get('/examenes', isAdmin, async (req,res) =>{
   res.render('links/listexam', {resultados});
 });
 
+router.get('/adminexam', isAdmin, async (req,res) =>{
+  res.render('links/examenadmin');
+});
 
+router.post('/adminexam', isAdmin, async (req,res) =>{
+  const { Pregunta, A, B, C, D } = req.body;
+  const newAsk = {
+      Pregunta,
+      A,
+      B,
+      C,
+      D
+  };
+  await pool.query('INSERT INTO preguntas set ?', [newAsk]);
+  res.redirect('/adminexan');
+});
+
+router.get('/modifyexam', isAdmin, async (req,res) =>{
+  const exam = await pool.query('SELECT * FROM preguntas')
+  res.render('links/tablaexamen', {exam: exam});
+});
+
+router.get('/delete/:pregunta', async (req,res) =>{
+  const {pregunta} = req.params;
+  await pool.query('DELETE FROM preguntas where Pregunta = ?', [pregunta]);
+  res.redirect('/modifyexam');
+
+});
+router.get('/edit/:numero', async (req,res) =>{
+  const {numero} = req.params;
+  const num = await pool.query('SELECT * FROM preguntas WHERE numero = ?'[numero]);
+  res.render('links/edit', {num: num});
+});
+
+
+router.get('/chat', isLoggedIn,(req, res) =>{
+  res.render('links/chat')
+});
 
 //Cerrar sesion
 router.get('/logout', (req, res) =>{
