@@ -69,7 +69,7 @@ router.post('/adminexam', isAdmin, async (req,res) =>{
       D
   };
   await pool.query('INSERT INTO preguntas set ?', [newAsk]);
-  res.redirect('/adminexan');
+  res.redirect('/adminexam');
 });
 
 router.get('/modifyexam', isAdmin, async (req,res) =>{

@@ -4,10 +4,10 @@
         <div class="margin__title">
             <p title="NoNeim" class= "fuente__title animate__animated animate__bounceInUp animate__slower">NoNeim</p>
         </div>
-        
-               <nav>
+        <nav>
             <a href="/administrator"><i class="fas fa-user"></i> Usuarios </a>            
             <a href="/adminexam"> Administrar Examen </a>            
+            <a href="/cuest"> Administrar Cuestionarios </a>  
             <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a> 
         </nav>
     </header>
@@ -16,34 +16,43 @@
         <br>
         <br>
         <br>
+       <br>
+        <br>
        
 
 <section>
-    
-    <form method="post" name="registropreguntas" action="/edit/{{pregunta.numero}}" id="formS">
-        <div class="form">
-            <p class="title2">Editar pregunta de Examen</p>
-        <div class="grupo" id="grupo__nombre">
-            <input type="text" name="Pregunta" value="{{pregunta.Pregunta}}" required><span class="barra"></span>
-            <label class="label1" for="">Pregunta</label>
-        </div>
-        <div class="grupo">
-            <input type="text" name="A" value="{{pregunta.A}}"  required><span class="barra"></span>
-            <label class="label1" for="">Inciso A</label>
-        </div>
-        <div class="grupo">
-            <input type="text" name="B" value="{{pregunta.B}}"  required><span class="barra"></span>
-            <label class="label1" for="">Inciso B</label>
-        </div>
-        <div class="grupo">
-            <input type="text" name="C" value="{{pregunta.C}}" required><span class="barra"></span>
-            <label class="label1" for="">Inciso C</label>
-        </div>
-        <div class="grupo">
-            <input type="text" name="D" value="{{pregunta.D}}"  required><span class="barra"></span>
-            <label class="label1" for="">Inciso D</label>
-        </div>
-        <input class="button" type="submit" value="Actualizar pregunta">
-        </div>
-    </form>
-</section>
+    <div class="container p-4">
+            <div class="col-md-4 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Editando Pregunta {{pregunta.numero}}</h1>
+                    <form method="post" name="registropreguntas" action="/edit/:{{pregunta.numero}}" id="formS">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="Pregunta" value="{{pregunta.Pregunta}}" placeholder="Pregunta" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="A" value="{{pregunta.A}}" placeholder="A" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="B" value="{{pregunta.B}}" placeholder="B" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="C" value="{{pregunta.C}}" placeholder="C" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="D" value="{{pregunta.D}}" placeholder="D" required>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">Agregar pregunta</button>
+                        </div>
+                    </form>
+                    
+                    <div class="form-group">
+                        <br>
+                           <a href="/modifyexam"><button class="btn btn-success btn-block">Consultar Examen</button></a> 
+                    </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
