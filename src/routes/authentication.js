@@ -111,6 +111,12 @@ router.post('/edit/:numero', async (req,res) =>{
   res.redirect('/modifyexam');
 });
 
+router.get('/stats', isAdmin, async(req, res) =>{
+  const preguntas = await pool.query('SELECT * FROM preguntas');
+  res.render('links/estadisticas', {preguntas});
+});
+
+
 router.get('/chat', isLoggedIn,(req, res) =>{
   res.render('links/chat')
 });
