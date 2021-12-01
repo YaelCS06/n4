@@ -38,12 +38,18 @@
         <br>
     <center>
     <div class="card border-light mb-3" style="max-width: 30rem;">
-  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Resultados de examen</font></font></div>
+  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Resultados de examen</h1></font></font></div>
   <div class="card-body">
     <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Se muestran los resultados de los alumnos en los examenes actuales</font></font></h4>
     <canvas id="myChart" ></canvas>
   </div>
 </div>
+<center>
+                    <div class="form-group">
+                        <br>
+                           <a href="#"><button class="btn btn-success btn-block">Estadisticas de Cuestionarios</button></a> 
+                    </div>
+                    </center>
 </center>
     
     <form name="form">
@@ -51,6 +57,7 @@
          <input id="usuario" type="text" value="{{numero}}" hidden>
     {{/each}}
     </form>
+    
 <script>
 const ctx = document.getElementById('myChart');
 const form = document.forms["form"];

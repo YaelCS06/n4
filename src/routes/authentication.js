@@ -110,6 +110,30 @@ router.post('/edit/:numero', async (req,res) =>{
   await pool.query('UPDATE preguntas set ? WHERE numero = ?', [actAsk, numero]);
   res.redirect('/modifyexam');
 });
+router.get('/adminc1', isAdmin, async (req,res) =>{
+  res.render('links/c1');
+});
+router.get('/adminc2', isAdmin, async (req,res) =>{
+  res.render('links/c2');
+});
+router.get('/adminc3', isAdmin, async (req,res) =>{
+  res.render('links/c3');
+});
+router.get('/adminc4', isAdmin, async (req,res) =>{
+  res.render('links/c4');
+});
+router.get('/adminc5', isAdmin, async (req,res) =>{
+  res.render('links/c5');
+});
+router.get('/adminc6', isAdmin, async (req,res) =>{
+  res.render('links/c6');
+});
+router.get('/adminc7', isAdmin, async (req,res) =>{
+  res.render('links/c7');
+});
+router.get('/adminc8', isAdmin, async (req,res) =>{
+  res.render('links/c8');
+});
 
 router.get('/stats', isAdmin, async(req, res) =>{
   const preguntas = await pool.query('SELECT * FROM preguntas');
