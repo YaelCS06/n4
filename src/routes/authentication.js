@@ -196,17 +196,137 @@ router.get('/deletec3/:pregunta', async (req,res) =>{
 router.get('/adminc4', isAdmin, async (req,res) =>{
   res.render('links/c4');
 });
+router.post('/adminc4', isAdmin, async (req,res) =>{
+  const { Pregunta, A, B, C, D } = req.body;
+  const Materia = "quimica";
+  const newAsk = {
+      Materia,
+      Pregunta,
+      A,
+      B,
+      C,
+      D
+  };
+  await pool.query('INSERT INTO cuestionarios set ?', [newAsk]);
+  res.redirect('/adminc4');
+});
+router.get('/modifyc4', isAdmin, async (req,res) =>{
+  const c1 = await pool.query('SELECT * FROM cuestionarios Where Materia="quimica" ');
+  res.render('links/m4', {c1: c1});
+});
+
+router.get('/deletec4/:pregunta', async (req,res) =>{
+  const {pregunta} = req.params;
+  await pool.query('DELETE FROM cuestionarios where numero = ?', [pregunta]);
+  res.redirect('/modifyc4');
+});
 router.get('/adminc5', isAdmin, async (req,res) =>{
   res.render('links/c5');
+});
+router.post('/adminc5', isAdmin, async (req,res) =>{
+  const { Pregunta, A, B, C, D } = req.body;
+  const Materia = "biologia";
+  const newAsk = {
+      Materia,
+      Pregunta,
+      A,
+      B,
+      C,
+      D
+  };
+  await pool.query('INSERT INTO cuestionarios set ?', [newAsk]);
+  res.redirect('/adminc5');
+});
+router.get('/modifyc5', isAdmin, async (req,res) =>{
+  const c1 = await pool.query('SELECT * FROM cuestionarios Where Materia="biologia" ');
+  res.render('links/m5', {c1: c1});
+});
+
+router.get('/deletec5/:pregunta', async (req,res) =>{
+  const {pregunta} = req.params;
+  await pool.query('DELETE FROM cuestionarios where numero = ?', [pregunta]);
+  res.redirect('/modifyc5');
 });
 router.get('/adminc6', isAdmin, async (req,res) =>{
   res.render('links/c6');
 });
+router.post('/adminc6', isAdmin, async (req,res) =>{
+  const { Pregunta, A, B, C, D } = req.body;
+  const Materia = "formacion";
+  const newAsk = {
+      Materia,
+      Pregunta,
+      A,
+      B,
+      C,
+      D
+  };
+  await pool.query('INSERT INTO cuestionarios set ?', [newAsk]);
+  res.redirect('/adminc6');
+});
+router.get('/modifyc6', isAdmin, async (req,res) =>{
+  const c1 = await pool.query('SELECT * FROM cuestionarios Where Materia="formacion" ');
+  res.render('links/m6', {c1: c1});
+});
+
+router.get('/deletec6/:pregunta', async (req,res) =>{
+  const {pregunta} = req.params;
+  await pool.query('DELETE FROM cuestionarios where numero = ?', [pregunta]);
+  res.redirect('/modifyc6');
+});
 router.get('/adminc7', isAdmin, async (req,res) =>{
   res.render('links/c7');
 });
+router.post('/adminc7', isAdmin, async (req,res) =>{
+  const { Pregunta, A, B, C, D } = req.body;
+  const Materia = "geo";
+  const newAsk = {
+      Materia,
+      Pregunta,
+      A,
+      B,
+      C,
+      D
+  };
+  await pool.query('INSERT INTO cuestionarios set ?', [newAsk]);
+  res.redirect('/adminc7');
+});
+router.get('/modifyc7', isAdmin, async (req,res) =>{
+  const c1 = await pool.query('SELECT * FROM cuestionarios Where Materia="geo" ');
+  res.render('links/m7', {c1: c1});
+});
+
+router.get('/deletec7/:pregunta', async (req,res) =>{
+  const {pregunta} = req.params;
+  await pool.query('DELETE FROM cuestionarios where numero = ?', [pregunta]);
+  res.redirect('/modifyc7');
+});
 router.get('/adminc8', isAdmin, async (req,res) =>{
   res.render('links/c8');
+});
+router.post('/adminc8', isAdmin, async (req,res) =>{
+  const { Pregunta, A, B, C, D } = req.body;
+  const Materia = "fisic";
+  const newAsk = {
+      Materia,
+      Pregunta,
+      A,
+      B,
+      C,
+      D
+  };
+  await pool.query('INSERT INTO cuestionarios set ?', [newAsk]);
+  res.redirect('/adminc8');
+});
+router.get('/modifyc8', isAdmin, async (req,res) =>{
+  const c1 = await pool.query('SELECT * FROM cuestionarios Where Materia="fisic" ');
+  res.render('links/m8', {c1: c1});
+});
+
+router.get('/deletec8/:pregunta', async (req,res) =>{
+  const {pregunta} = req.params;
+  await pool.query('DELETE FROM cuestionarios where numero = ?', [pregunta]);
+  res.redirect('/modifyc8');
 });
 router.get('/stats', isAdmin, async(req, res) =>{
   const preguntas = await pool.query('SELECT * FROM preguntas');
