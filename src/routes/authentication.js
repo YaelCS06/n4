@@ -51,7 +51,7 @@ router.get('/resultados', isAdmin, async (req,res) =>{
 });
 
 router.get('/examenes', isAdmin, async (req,res) =>{
-  const resultados = await pool.query('SELECT u.Ap_pat,u.Ap_mat,u.Nombre, e.resultado from usuarios as u inner join examen as e on u.ID=e.Id_user');
+  const resultados = await pool.query('SELECT u.Ap_pat,u.Ap_mat,u.Nombre, e.resultado, e.matematicas, e.espa, e.biologia, e.fisica, e.quimica, e.historia, e.geografia, e.formacion from usuarios as u inner join examen as e on u.ID=e.Id_user');
   res.render('links/listexam', {resultados});
 });
 
@@ -329,8 +329,8 @@ router.get('/deletec8/:pregunta', async (req,res) =>{
   res.redirect('/modifyc8');
 });
 router.get('/stats', isAdmin, async(req, res) =>{
-  const preguntas = await pool.query('SELECT * FROM preguntas');
-  res.render('links/estadisticas', {preguntas});
+  const examen = await pool.query('SELECT * FROM examen');
+  res.render('links/estadisticas', {examen});
 });
 
 

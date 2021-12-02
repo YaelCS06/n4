@@ -45,6 +45,10 @@
   </div>
 </div>
 <center>
+    <div class="form-group">
+                        <br>
+                           <a href="/examenes"><button class="btn btn-success btn-block">Resultados individuales</button></a> 
+                    </div>
                     <div class="form-group">
                         <br>
                            <a href="#"><button class="btn btn-success btn-block">Estadisticas de Cuestionarios</button></a> 
@@ -53,18 +57,19 @@
 </center>
     
     <form name="form">
-    {{#each preguntas}}
-         <input id="usuario" type="text" value="{{numero}}" hidden>
+    {{#each examen}}
+         <input id="usuario" type="text" value="{{resultado}}" >
     {{/each}}
     </form>
+
     
 <script>
 const ctx = document.getElementById('myChart');
-const form = document.forms["form"];
+const myForm = document.forms["form"];
 const arreglo = [0,0]
-for(var i = 0 ; i <= 49; i++){
-    if(form[i].value<=10){
-        form[i].value
+
+for(var i = 0 ; i <= myForm.length; i++){
+    if(myForm[0].value < 48){
         arreglo[0] =arreglo[0]+ 1;
         
     }else{
@@ -73,6 +78,7 @@ for(var i = 0 ; i <= 49; i++){
         
     
 }
+console.log(arreglo[1]);
 console.log(arreglo[0]);
 const myChart = new Chart(ctx, {
     type: 'doughnut',
