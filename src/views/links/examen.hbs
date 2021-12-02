@@ -7,7 +7,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col" hidden>Numero</th>
+      <th scope="col" >Numero</th>
       <th scope="col">Pregunta</th>
       <th scope="col"></th>
       <th scope="col"></th>
@@ -19,7 +19,7 @@
   {{#each exam}}
   <tbody>
     <tr class="table-active">
-      <th scope="row" hidden>{{numero}}</th>
+      <th scope="row" >{{numero}}</th>
       <td>{{Pregunta}}</td>
       <td>{{A}}</td>
       <td>{{B}}</td>
@@ -43,7 +43,20 @@
 <br>
 <br>
 <center>
-<button class="btn btn-success btn-block" onclick="verificarRespuesta()">Finalizar</button>
+                     <form method="post" id="rexam" name="rexam" hidden>
+                        <input type="text" name="cuadrito" id="cuadrito" readonly hidden>
+                        <input type="text" name="matematicas" id="matematicas" readonly hidden>
+                        <input type="text" name="espa" id="espa" readonly hidden>
+                        <input type="text" name="biologia" id="biologia" readonly hidden>
+                        <input type="text" name="fisica" id="fisica" readonly hidden>
+                        <input type="text" name="quimica" id="quimica" readonly hidden>
+                        <input type="text" name="historia" id="historia" readonly hidden>
+                        <input type="text" name="geografia" id="geografia" readonly hidden>
+                        <input type="text" name="formacion" id="formacion" readonly hidden>
+                    
+                    </form>
+                    <button class="btn btn-success btn-block" onclick="verificarRespuesta()">Finalizar</button>
+                    
 </center>
 <br>
 <br>
