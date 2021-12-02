@@ -29,23 +29,130 @@ router.post('/examen', async (req, res) => {
 });
     
 //Cuestionario
+router.get('/calificaciones', isLoggedIn, (req, res) =>{
+    res.render('links/resultados')
+});
+router.get('/resultadoscuest', isLoggedIn, async(req, res) =>{
+    const resultadoscuest = await pool.query('SELECT * FROM cuestionario where user_id =?', [req.user.ID]);
+    res.render('links/cuestionario',{resultadoscuest})
+});
 router.get('/materias', isLoggedIn, (req, res) =>{
     res.render('links/materias')
 });
-router.get('/cuestionario', isLoggedIn, (req, res) =>{
-    res.render('links/cuestionario')
+router.get('/cuestionario1', isLoggedIn, async(req, res) =>{
+    const exam = await pool.query('SELECT * FROM cuestionarios Where Materia="espa"')
+    res.render('links/ca1', {exam})
 });
-router.post('/cuestionario', async(req, res) =>{
+router.post('/cuestionario1', async(req, res) =>{
     const { cuadrito } = req.body;
     const newCuest = {
         resultado: cuadrito,
-        user_id: req.user.ID
+        user_id: req.user.ID,
+        materia: "Español"
     };
     await pool.query('INSERT INTO cuestionario set ?', [newCuest]);
     res.redirect('/profile');
 });
+router.get('/cuestionario2', isLoggedIn, async(req, res) =>{
+    const exam = await pool.query('SELECT * FROM cuestionarios Where Materia="mate"')
+    res.render('links/ca2', {exam})
+});
+router.post('/cuestionario2', async(req, res) =>{
+    const { cuadrito } = req.body;
+    const newCuest = {
+        resultado: cuadrito,
+        user_id: req.user.ID,
+        materia: "Matematicas"
+    };
+    await pool.query('INSERT INTO cuestionario set ?', [newCuest]);
+    res.redirect('/usuario/resultadoscuest');
+});
 
+router.get('/cuestionario3', isLoggedIn, async(req, res) =>{
+    const exam = await pool.query('SELECT * FROM cuestionarios Where Materia="historia"')
+    res.render('links/ca3', {exam})
+});
+router.post('/cuestionario3', async(req, res) =>{
+    const { cuadrito } = req.body;
+    const newCuest = {
+        resultado: cuadrito,
+        user_id: req.user.ID,
+        materia: "Historia"
+    };
+    await pool.query('INSERT INTO cuestionario set ?', [newCuest]);
+    res.redirect('/usuario/resultadoscuest');
+});
 
+router.get('/cuestionario4', isLoggedIn, async(req, res) =>{
+    const exam = await pool.query('SELECT * FROM cuestionarios Where Materia="quimica"')
+    res.render('links/ca4', {exam})
+});
+router.post('/cuestionario4', async(req, res) =>{
+    const { cuadrito } = req.body;
+    const newCuest = {
+        resultado: cuadrito,
+        user_id: req.user.ID,
+        materia: "Quimica"
+    };
+    await pool.query('INSERT INTO cuestionario set ?', [newCuest]);
+    res.redirect('/usuario/resultadoscuest');
+});
+router.get('/cuestionario5', isLoggedIn, async(req, res) =>{
+    const exam = await pool.query('SELECT * FROM cuestionarios Where Materia="biologia"')
+    res.render('links/ca5', {exam})
+});
+router.post('/cuestionario5', async(req, res) =>{
+    const { cuadrito } = req.body;
+    const newCuest = {
+        resultado: cuadrito,
+        user_id: req.user.ID,
+        materia: "Biologia"
+    };
+    await pool.query('INSERT INTO cuestionario set ?', [newCuest]);
+    res.redirect('/usuario/resultadoscuest');
+});
+router.get('/cuestionario6', isLoggedIn, async(req, res) =>{
+    const exam = await pool.query('SELECT * FROM cuestionarios Where Materia="formacion"')
+    res.render('links/ca6', {exam})
+});
+router.post('/cuestionario6', async(req, res) =>{
+    const { cuadrito } = req.body;
+    const newCuest = {
+        resultado: cuadrito,
+        user_id: req.user.ID,
+        materia: "Formacion"
+    };
+    await pool.query('INSERT INTO cuestionario set ?', [newCuest]);
+    res.redirect('/usuario/resultadoscuest');
+});
+router.get('/cuestionario7', isLoggedIn, async(req, res) =>{
+    const exam = await pool.query('SELECT * FROM cuestionarios Where Materia="geo"')
+    res.render('links/ca7', {exam})
+});
+router.post('/cuestionario7', async(req, res) =>{
+    const { cuadrito } = req.body;
+    const newCuest = {
+        resultado: cuadrito,
+        user_id: req.user.ID,
+        materia: "Geografia"
+    };
+    await pool.query('INSERT INTO cuestionario set ?', [newCuest]);
+    res.redirect('/usuario/resultadoscuest');
+});
+router.get('/cuestionario8', isLoggedIn, async(req, res) =>{
+    const exam = await pool.query('SELECT * FROM cuestionarios Where Materia="fisic"')
+    res.render('links/ca8', {exam})
+});
+router.post('/cuestionario8', async(req, res) =>{
+    const { cuadrito } = req.body;
+    const newCuest = {
+        resultado: cuadrito,
+        user_id: req.user.ID,
+        materia: "Fisica"
+    };
+    await pool.query('INSERT INTO cuestionario set ?', [newCuest]);
+    res.redirect('/usuario/resultadoscuest');
+});
 //Comipems
 router.get('/comipems', isLoggedIn,(req, res) =>{
     res.render('links/comipems')

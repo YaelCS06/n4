@@ -1,16 +1,33 @@
-
+<link rel="stylesheet" href="https://bootswatch.com/5/zephyr/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <header>
         <img class= "logo animate__animated animate__rotateInDownLeft animate__slower" src="/images/NoNeim.png" alt="Error al cargar (Logo de NoNeim)" title="Logo NoNeim">
         <div class="margin__title">
             <p title="NoNeim" class= "fuente__title animate__animated animate__bounceInUp animate__slower">NoNeim</p>
         </div>
         <nav>
-          <a href="/administrator"><i class="fas fa-user"></i> Usuarios </a>            
-            <a href="/resultados">Cuestionarios </a>            
-            <a href="/examenes">Examenes </a>                             
-            <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+            <a href="/administrator"><i class="fas fa-user"></i> Usuarios </a>            
+            <a href="/adminexam"> Administrar Examen </a>            
+            <a href="/cuest"> Administrar Cuestionarios </a>  
+            <a href="/stats"> Estadisticas </a>  
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a> 
         </nav>
-    </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+          <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </header> 
         <br>
         <br>
         <br>
@@ -30,9 +47,11 @@
                     <div class="card text-center">
                         <div class="card-body">
                           <h2 class="card-title text-upprecase">
-                              {{Ap_pat}}{{Ap_mat}}{{Nombre}}
+                              {{Ap_pat}} {{Ap_mat}} {{Nombre}}
                           </h2>  
-                          <p class="m-1">{{resultado}}</p>
+                          <hr>
+                          <p class="m-1"><h3>{{materia}}</h3></p>
+                          <p class="m-1">Resultado:{{resultado}}</p>
                           
                         </div>
                     </div>
@@ -40,5 +59,6 @@
             {{/each}}
 
         </div>
+        <br>
     </div>
     

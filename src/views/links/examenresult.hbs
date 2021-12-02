@@ -1,21 +1,23 @@
-
-<section>
-            <img class="user" title="Usuario" src="/images/unDraw/male.svg" alt="">
-            <img class="user2" title="Usuario"  src="/images/unDraw/female.svg" alt="">
-            <div class="datos_perfil">
-                <div id="form" class="form">
+           <section>
+           <br>
+           <br>
+           <br>        
+               <br>
+               <br>
+                    <div>
+                               <div id="form" class="form">
                     <div>
                         <div class="card border-light mb-3" style="max-width: 30rem;">
-  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Bienvenido {{user.username}}</h1></font></font></div>
+  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Calificaciones</h1></font></font></div>
   <div class="card-body">
     <h4 class="card-title"><font style="vertical-align: inherit;">
-        <font style="vertical-align: inherit;"><a class="boton"  href="/usuario/aula"><i class="fas fa-chalkboard-teacher"></i> Aula</a></font>
+        <font style="vertical-align: inherit;"><a  href="/usuario/resultadoscuest"></i> Calificaciones de cuestionarios</a></font>
         </font>
         </h4>
         <br>
         <hr>
         <h4 class="card-title"><font style="vertical-align: inherit;">
-        <font style="vertical-align: inherit;"><a class="boton"  href="/resultadosexm"> Calificaciones</a></font>
+        <font style="vertical-align: inherit;"><a href="/resultadosexm"> Calificaciones de examen</a></font>
         </font>
         </h4>
         <br>
@@ -27,18 +29,23 @@
                     </div>
                 </div>
                 
+
+
+{{#each resultadosexm}}
+
+
+                                <div id="form" class="form">
+                    <div>
+                        <div class="card border-light mb-3" style="max-width: 30rem;">
+  <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Resultado de examen</h1></font></font></div>
+  <div class="card-body">
+    
         
-                <div class="container p-4">
-                    <div class="row">
-                        {{#each resultadosexm}}
-                            <div class="col-md-4">
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                    <h2 class="card-title text-upprecase title2">
-                                        Resultado de examen
-                                    </h2>  
-                                    
-                                    <b class="m-1">Total:{{resultado}}</b>
+        </font>
+        </h4>
+        <br>
+        
+                                    <h3><b class="m-1">Total:{{resultado}}</b></h3>
                                     <br>
                                     <b class="m-1">Matematicas: {{matematicas}}</b>
                                     <br>
@@ -55,12 +62,16 @@
                                     <b class="m-1">Geografia: {{geografia}}</b>
                                     <br>
                                     <b class="m-1">Formacion: {{formacion}}</b>
-                                    </div>
-                                </div>
-                            </div>
-                        {{/each}}
+                                    <br>
+    
+  </div>
+</div>
+                     
                     </div>
                 </div>
-               
-            </div>
-        </section>
+                
+{{/each}}
+
+
+        
+              

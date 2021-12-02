@@ -31,8 +31,7 @@ router.post('/signin',  (req, res, next) =>{
 
 //Redirect de usuario
 router.get('/profile', isLoggedIn, async (req,res) =>{
-  const resultadoscuest = await pool.query('SELECT * FROM cuestionario where user_id =?', [req.user.ID]);
-  res.render('profile', {resultadoscuest});
+  res.render('profile', );
 });
 router.get('/resultadosexm', isLoggedIn, async (req,res) =>{
   const resultadosexm = await pool.query('SELECT * FROM examen where Id_user =?', [req.user.ID]);
@@ -46,7 +45,7 @@ router.get('/administrator', isAdmin, async (req,res) =>{
 });
 
 router.get('/resultados', isAdmin, async (req,res) =>{
-  const resultados = await pool.query('SELECT u.Ap_pat,u.Ap_mat,u.Nombre, c.resultado from usuarios as u inner join cuestionario as c on u.ID=c.user_id');
+  const resultados = await pool.query('SELECT u.Ap_pat,u.Ap_mat,u.Nombre, c.resultado, c.materia from usuarios as u inner join cuestionario as c on u.ID=c.user_id');
   res.render('links/listresult', {resultados});
 });
 
@@ -129,7 +128,7 @@ router.post('/adminc1', isAdmin, async (req,res) =>{
   res.redirect('/adminc1');
 });
 router.get('/modifyc1', isAdmin, async (req,res) =>{
-  const c1 = await pool.query('SELECT * FROM cuestionarios Where Materia="espa" ');
+  const c1 = await pool.query('SELECT * FROM cuestionarios Where Materia="espa"');
   res.render('links/m1', {c1: c1});
 });
 
@@ -332,7 +331,10 @@ router.get('/stats', isAdmin, async(req, res) =>{
   const examen = await pool.query('SELECT * FROM examen');
   res.render('links/estadisticas', {examen});
 });
-
+router.get('/statscuest', isAdmin, async(req, res) =>{
+  const cuest = await pool.query('SELECT * FROM cuestionario');
+  res.render('links/estadisticascuest', {cuest});
+});
 
 router.get('/chat', isLoggedIn,(req, res) =>{
   res.render('links/chat')

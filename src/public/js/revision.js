@@ -1,5 +1,5 @@
 function verificarRespuesta(){
-    var total = 79;
+    
     var puntos = 0;
     var myForm = document.forms["form"];
     var arreglo = [];
@@ -35,23 +35,118 @@ function verificarRespuesta(){
     document.getElementById("formacion").value = r8;
     document.rexam.submit();
 }
-function verificarRespuestaCu(){
-    var total = 10;
+function verificarRespuestaCu1(){
     var puntos = 0;
-    var myForm = document.forms["quizForm"];
-    var respuestas = ["d","c","c","b","a","c","d","d","c","d"];
+    var myForm = document.forms["form"];
+    var respuestas = ["d","a","c","c","d","a","c","d","d","b"];
 
-    for(var i = 1; i <= total; i ++){
-        if(myForm["p" + i].value === null || myForm["p"+i].value === ""){
-            swal("Por favor responde la pregunta " + i);
-            return false;
-        }else{
-            if(myForm["p"+i].value ===respuestas[i-1]){
-                puntos ++ ;
+    for(var i = 1; i <= myForm.length; i ++){
+        
+        if(myForm[i-1].value ===respuestas[i-1]){
+                puntos ++;
             }
-        }
     }
     document.getElementById("cuadrito").value = puntos;
     swal("Tu resultado es : "+ puntos);
-    document.rcuest.submit();
+    document.rc1.submit();
+}
+function verificarRespuestaCu2(){
+    var puntos = 0;
+    var myForm = document.forms["form"];
+    var respuestas = ["d","d","b","d","d","d","c","c","a","d"];
+
+    for(var i = 1; i <= myForm.length; i ++){
+        
+        if(myForm[i-1].value ===respuestas[i-1]){
+                puntos ++;
+            }
+    }
+    document.getElementById("cuadrito").value = puntos;
+    swal("Tu resultado es : "+ puntos);
+    document.rc1.submit();
+}
+function verificarRespuestaCu3(){
+    var puntos = 0;
+    var myForm = document.forms["form"];
+    var respuestas = ["d","c","a","d","a","c","c","a","a","d"];
+    for(var i = 1; i <= myForm.length; i ++){
+        
+        if(myForm[i-1].value ===respuestas[i-1]){
+                puntos ++;
+            }
+    }
+    document.getElementById("cuadrito").value = puntos;
+    swal("Tu resultado es : "+ puntos);
+    document.rc1.submit();
+}
+
+function verificarRespuestaCu4(){
+    var puntos = 0;
+    var myForm = document.forms["form"];
+    var respuestas = ["b","a","a","b","c","d","a","d","b","d"];
+    for(var i = 1; i <= myForm.length; i ++){
+        
+        if(myForm[i-1].value ===respuestas[i-1]){
+                puntos ++;
+            }
+    }
+    document.getElementById("cuadrito").value = puntos;
+    swal("Tu resultado es : "+ puntos);
+    document.rc1.submit();
+}
+function verificarRespuestaCu5(){
+    var puntos = 0;
+    var myForm = document.forms["form"];
+    var respuestas = ["d","c","c","b","a","c","d","d","c","d"];
+    for(var i = 1; i <= myForm.length; i ++){
+        
+        if(myForm[i-1].value ===respuestas[i-1]){
+                puntos ++;
+            }
+    }
+    document.getElementById("cuadrito").value = puntos;
+    swal("Tu resultado es : "+ puntos);
+    document.rc1.submit();
+}
+function verificarRespuestaCu6(){
+    var puntos = 0;
+    var myForm = document.forms["form"];
+    var respuestas = ["c","b","d","a","b","c","d","c","c","c"];
+    for(var i = 1; i <= myForm.length; i ++){
+        
+        if(myForm[i-1].value ===respuestas[i-1]){
+                puntos ++;
+            }
+    }
+    document.getElementById("cuadrito").value = puntos;
+    swal("Tu resultado es : "+ puntos);
+    document.rc1.submit();
+}
+function verificarRespuestaCu7(){
+    var puntos = 0;
+    var myForm = document.forms["form"];
+    var respuestas = ["d","c","d","b","b","d","d","d","a","d"];
+    for(var i = 1; i <= myForm.length; i ++){
+        
+        if(myForm[i-1].value ===respuestas[i-1]){
+                puntos ++;
+            }
+    }
+    document.getElementById("cuadrito").value = puntos;
+    swal("Tu resultado es : "+ puntos);
+    document.rc1.submit();
+}
+function verificarRespuestaCu8(){
+    var puntos = 0;
+    var myForm = document.forms["form"];
+    var respuestas = ["b","a","a","d","d","d","a","b","d","b"];
+    for(var i = 1; i <= myForm.length; i ++){
+        
+        if(myForm[i-1].value ===respuestas[i-1]){
+                puntos ++;
+            }
+    }
+    document.getElementById("cuadrito").value = puntos;
+    swal("Tu resultado es : "+ puntos);
+    document.rc1.submit();
 }
