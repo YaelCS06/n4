@@ -81,14 +81,14 @@ for(var i = 1 ; i <= myForm.length; i++){
 }
 
 const myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'doughnut',
     data: {
          labels: [
     'Reprobados',
     'Aprobados'
   ],
         datasets: [{
-            label: 'Reprobados',
+            label: 'Aciertos',
             data: arreglo,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
