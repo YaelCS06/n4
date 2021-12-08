@@ -66,26 +66,96 @@
          <input id="usuario" type="text" value="{{espa}}" hidden>
     {{/each}}
     </form>
-    
+    <form name="form2">
+    {{#each examen}}
+         <input id="usuario" type="text" value="{{biologia}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form3">
+    {{#each examen}}
+         <input id="usuario" type="text" value="{{fisica}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form4">
+    {{#each examen}}
+         <input id="usuario" type="text" value="{{quimica}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form5">
+    {{#each examen}}
+         <input id="usuario" type="text" value="{{historia}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form6">
+    {{#each examen}}
+         <input id="usuario" type="text" value="{{geografia}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form7">
+    {{#each examen}}
+         <input id="usuario" type="text" value="{{formacion}}" hidden>
+    {{/each}}
+    </form>
 <script>
 const ctx = document.getElementById('myChart');
 const arreglo = [0,0,0,0,0,0,0,0]
 
 const mate = document.forms["form"];
-for(var i = 1 ; i <= mate.length; i++){
-    console.log(mate[i-1].value)
-    arreglo[0] = (arreglo[0] - mate[i-1].value);
-}
-arreglo[0] = arreglo[0]*-1;
-arreglo[0] =  arreglo[0] / mate.length;
+    for(var i = 1 ; i <= mate.length; i++){
+        console.log(arreglo[0])
+        arreglo[0] = (arreglo[0] - mate[i-1].value);
+    }
+    arreglo[0] = arreglo[0]*-1;
+    arreglo[0] =  arreglo[0] / mate.length;
 
 const espa = document.forms["form1"];
-for(var i = 1 ; i <= espa.length; i++){
-    console.log(mate[i-1].value)
-    arreglo[1] = (arreglo[1] - espa[i-1].value);
-}
-arreglo[1] = arreglo[1]*-1;
-arreglo[1] =  arreglo[1] / espa.length;
+    for(var i = 1 ; i <= espa.length; i++){
+        arreglo[1] = (arreglo[1] - espa[i-1].value);
+    }
+    arreglo[1] = arreglo[1]*-1;
+    arreglo[1] =  arreglo[1] / espa.length;
+
+const bio = document.forms["form2"];
+    for(var i = 1 ; i <= bio.length; i++){
+        arreglo[2] = (arreglo[2] - bio[i-1].value);
+    }
+    arreglo[2] = arreglo[2] *-1;
+    arreglo[2] =  arreglo[2] / bio.length;
+
+const fisi = document.forms["form3"];
+    for(var i = 1 ; i <= fisi.length; i++){
+        arreglo[3] = (arreglo[3] - fisi[i-1].value);
+    }
+    arreglo[3] = arreglo[3] *-1;
+    arreglo[3] =  arreglo[3] / fisi.length;
+
+const quimi = document.forms["form4"];
+    for(var i = 1 ; i <= quimi.length; i++){
+        arreglo[4] = (arreglo[4] - quimi[i-1].value);
+    }
+    arreglo[4] = arreglo[4] *-1;
+    arreglo[4] = arreglo[4] / quimi.length;
+
+const hist = document.forms["form5"];
+    for(var i = 1 ; i <= hist.length; i++){
+        arreglo[5] = (arreglo[5] - hist[i-1].value);
+    }
+    arreglo[5] = arreglo[5] *-1;
+    arreglo[5] = arreglo[5] / hist.length;
+
+const geo = document.forms["form6"];
+    for(var i = 1 ; i <= geo.length; i++){
+        arreglo[6] = (arreglo[6] - geo[i-1].value);
+    }
+    arreglo[6] = arreglo[6] *-1;
+    arreglo[6] = arreglo[6] / geo.length;
+
+const form = document.forms["form7"];
+    for(var i = 1 ; i <= form.length; i++){
+        arreglo[7] = (arreglo[7] - form[i-1].value);
+    }
+    arreglo[7] = arreglo[7] *-1;
+    arreglo[7] = arreglo[7] / form.length;
 
 
 const myChart = new Chart(ctx, {
