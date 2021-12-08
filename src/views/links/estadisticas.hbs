@@ -58,46 +58,59 @@
     
     <form name="form">
     {{#each examen}}
-         <input id="usuario" type="text" value="{{resultado}}" hidden>
+         <input id="usuario" type="text" value="{{matematicas}}" hidden>
     {{/each}}
     </form>
-
+    <form name="form1">
+    {{#each examen}}
+         <input id="usuario" type="text" value="{{espa}}" hidden>
+    {{/each}}
+    </form>
     
 <script>
 const ctx = document.getElementById('myChart');
-const myForm = document.forms["form"];
-const arreglo = [0,0]
+const arreglo = [0,0,0,0,0,0,0,0]
 
-
-
-for(var i = 1 ; i <= myForm.length; i++){
-    if(myForm[i-1].value < 48){
-        arreglo[0] =arreglo[0]+ 1;
-        
-    }else{
-        arreglo[1] =arreglo[1]+ 1;
-    }
-        
-    
+const mate = document.forms["form"];
+for(var i = 1 ; i <= mate.length; i++){
+    console.log(mate[i-1].value)
+    arreglo[0] = (arreglo[0] - mate[i-1].value);
 }
+arreglo[0] = arreglo[0]*-1;
+arreglo[0] =  arreglo[0] / mate.length;
+
+const espa = document.forms["form1"];
+for(var i = 1 ; i <= espa.length; i++){
+    console.log(mate[i-1].value)
+    arreglo[1] = (arreglo[1] - espa[i-1].value);
+}
+arreglo[1] = arreglo[1]*-1;
+arreglo[1] =  arreglo[1] / espa.length;
+
 
 const myChart = new Chart(ctx, {
-    type: 'doughnut',
+    type: 'polarArea',
     data: {
          labels: [
-    'Menores a 48 aciertos',
-    'Mayores a 48 aciertos'
+    'Matematicas',
+    'Español',
+    'Biologia',
+    'Fisica',
+    'Quimica',
+    'Historia',
+    'Geografia',
+    'Formacion'
   ],
         datasets: [{
             label: 'Aciertos',
             data: arreglo,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
