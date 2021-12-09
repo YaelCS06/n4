@@ -41,7 +41,13 @@
   <div class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><h1>Resultados de Examen</h1></font></font></div>
   <div class="card-body">
     <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Se muestran los resultados de los alumnos en los examenes actuales</font></font></h4>
+    <center>
+        <button type="button" class="btn btn-danger" id="alumno" disabled>Alumnos</button>
+    </center>
     <canvas id="myChart" ></canvas>
+    <center>
+        <button type="button" class="btn btn-primary" id="promedio" disabled>Promedio</button>
+    </center>
   </div>
 </div>
 <center>
@@ -56,42 +62,47 @@
                     </center>
 </center>
     
-    <form name="form">
+    <form name="form0" hidden>
+    {{#each examen}}
+         <input id="usuario" type="text" value="{{resultado}}" hidden>
+    {{/each}}
+    </form>
+    <form name="form" hidden>
     {{#each examen}}
          <input id="usuario" type="text" value="{{matematicas}}" hidden>
     {{/each}}
     </form>
-    <form name="form1">
+    <form name="form1" hidden>
     {{#each examen}}
          <input id="usuario" type="text" value="{{espa}}" hidden>
     {{/each}}
     </form>
-    <form name="form2">
+    <form name="form2" hidden>
     {{#each examen}}
          <input id="usuario" type="text" value="{{biologia}}" hidden>
     {{/each}}
     </form>
-    <form name="form3">
+    <form name="form3" hidden>
     {{#each examen}}
          <input id="usuario" type="text" value="{{fisica}}" hidden>
     {{/each}}
     </form>
-    <form name="form4">
+    <form name="form4" hidden>
     {{#each examen}}
          <input id="usuario" type="text" value="{{quimica}}" hidden>
     {{/each}}
     </form>
-    <form name="form5">
+    <form name="form5" hidden>
     {{#each examen}}
          <input id="usuario" type="text" value="{{historia}}" hidden>
     {{/each}}
     </form>
-    <form name="form6">
+    <form name="form6" hidden>
     {{#each examen}}
          <input id="usuario" type="text" value="{{geografia}}" hidden>
     {{/each}}
     </form>
-    <form name="form7">
+    <form name="form7" hidden>
     {{#each examen}}
          <input id="usuario" type="text" value="{{formacion}}" hidden>
     {{/each}}
@@ -99,6 +110,7 @@
 <script>
 const ctx = document.getElementById('myChart');
 const arreglo = [0,0,0,0,0,0,0,0]
+const variable = [0];
 
 const mate = document.forms["form"];
     for(var i = 1 ; i <= mate.length; i++){
@@ -153,10 +165,30 @@ const geo = document.forms["form6"];
 const form = document.forms["form7"];
     for(var i = 1 ; i <= form.length; i++){
         arreglo[7] = (arreglo[7] - form[i-1].value);
+        
     }
     arreglo[7] = arreglo[7] *-1;
     arreglo[7] = arreglo[7] / form.length;
 
+
+const prom = document.forms["form0"];
+    for(var i = 1 ; i <= prom.length; i++){
+        variable[0] = (variable[0] - prom[i-1].value);        
+    }
+
+    
+    variable[0] = variable[0] *-1;
+    variable[0] = variable[0] / prom.length;
+
+  var uno = document.getElementById("promedio");
+  if (uno.innerHTML == 'Promedio') 
+      uno.innerHTML = 'Promedio grupal: ' + variable[0];
+  else uno.innerHTML = 'Promedio grupal: ' + variable[0]; 
+
+  var uno = document.getElementById("alumno");
+  if (uno.innerHTML == 'Alumnos') 
+      uno.innerHTML = 'Examenes evaluados: ' + prom.length;
+  else uno.innerHTML = 'Examenes evaluados: ' + prom.length; 
 
 const myChart = new Chart(ctx, {
     type: 'polarArea',
@@ -180,7 +212,9 @@ const myChart = new Chart(ctx, {
                 'rgba(255, 206, 86, 0.5)',
                 'rgba(75, 192, 192, 0.5)',
                 'rgba(153, 102, 255, 0.5)',
-                'rgba(255, 159, 64, 0.5)'
+                'rgba(255, 159, 64, 0.5)',
+                'rgba(0, 255, 255, 0.5)',
+                'rgba(255, 255, 0, 0.5)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -188,7 +222,9 @@ const myChart = new Chart(ctx, {
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 159, 64, 1)',
+                'rgba(0, 255, 255, 1)',
+                'rgba(255, 255, 0, 1)'
             ],
             borderWidth: 1
         }]
